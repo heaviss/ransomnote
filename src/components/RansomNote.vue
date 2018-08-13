@@ -1,6 +1,10 @@
 <template>
   <div class="ransomnote">
-    <RansomLetter v-for="letter in text" :letter="letter" :key="letter"></RansomLetter>
+    <RansomLetter v-for="(letter, index) in text" 
+                  :letter="letter" 
+                  :key="index"
+                  :randomFontColor="randomFontColor">
+    </RansomLetter>
   </div>
 </template>
 
@@ -13,7 +17,11 @@ export default {
   },
   name: 'RansomNote',
   props: {
-    text: String
+    text: String,
+    randomFontColor: {
+      type: Boolean,
+      default: true
+    }
   }
 }
 </script>
