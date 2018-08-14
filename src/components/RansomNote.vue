@@ -3,7 +3,8 @@
     <RansomLetter v-for="(letter, index) in text" 
                   :letter="letter" 
                   :key="index"
-                  :randomFontColor="randomFontColor">
+                  :randomFontColor="randomFontColor"
+                  :randomBackColor="randomBackColor">
     </RansomLetter>
   </div>
 </template>
@@ -19,6 +20,10 @@ export default {
   props: {
     text: String,
     randomFontColor: {
+      type: Boolean,
+      default: true
+    },
+    randomBackColor: {
       type: Boolean,
       default: true
     }
