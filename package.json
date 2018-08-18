@@ -1,10 +1,28 @@
 {
   "name": "ransomnote",
   "version": "0.1.0",
-  "private": true,
+  "description": "Makes letters look like they've been cut from newspaper.",
+  "license": "MIT",
+  "homepage": "https://github.com/heaviss/ransomnote#readme",
+  "author": "Vladimir Seregin",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/heaviss/ransomnote.git"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "main": "./dist/RansomNote.common.js",
+  "browser": "./dist/RansomNote.umd.min.js",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name RansomNote src/components/RansomNote.vue",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
