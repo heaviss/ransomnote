@@ -18,7 +18,19 @@ Makes letters look like they've been cut from newspaper.
 - live: change random parameter of random letter once a second;
 - random font;
 - random background texture;
-- (maybe) convert to leetspeak.
+- (maybe) convert to leetspeak;
+- live: one param of one random letter changes once a second;
+
+## Usage
+### Browser
+```
+#todo
+```
+
+### Package
+```
+#todo
+```
 
 
 ## Project setup
@@ -45,3 +57,6 @@ yarn run lint
 ```
 yarn run test:unit
 ```
+
+## License
+MIT
