@@ -3,11 +3,11 @@ Makes letters look like they've been cut from newspaper.
 
 ## Features
 - random font color;
-- random background color.
+- random background color;
+- uppercase/lowercase;
 
 ## ToDo
 - normal/bold/italic;
-- uppercase/lowercase;
 - random margin;
 - random padding;
 - random rotation;
