@@ -28,7 +28,7 @@ Makes letters look like they've been cut from newspaper.
 <script src="https://unpkg.com/ransomnote"></script>
 
 <div id="app">
-  <ransom-note text="привет"></ransom-note>
+  <ransom-note text="As you value your life or your reason keep away from the moor."></ransom-note>
 </div>
 
 <script>
