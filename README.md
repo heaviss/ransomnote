@@ -24,7 +24,20 @@ Makes letters look like they've been cut from newspaper.
 ## Usage
 ### Browser
 ```
-#todo
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/ransomnote"></script>
+
+<div id="app">
+  <ransom-note text="привет"></ransom-note>
+</div>
+
+<script>
+new Vue({
+  components: {
+    RansomNote
+  }
+}).$mount('#app')
+</script>
 ```
 
 ### Package
