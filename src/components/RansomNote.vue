@@ -1,12 +1,17 @@
 <template>
-  <div class="ransomnote">
-    <RansomLetter v-for="(letter, index) in text" 
-                  :letter="letter" 
-                  :key="index"
-                  :randomFontColor="randomFontColor"
-                  :randomBackColor="randomBackColor">
-    </RansomLetter>
-  </div>
+  <span class="ransomnote">
+    <template v-for="(letter, index) in text" >
+      <RansomLetter v-if="!/\s/.exec(letter)"
+                    :letter="letter" 
+                    :key="index"
+                    :randomFontColor="randomFontColor"
+                    :randomBackColor="randomBackColor"
+                    :randomFontCase="randomFontCase"
+                    >
+      </RansomLetter>
+      <template v-else>{{letter}}</template>
+    </template>
+  </span>
 </template>
 
 <script>
@@ -26,7 +31,11 @@ export default {
     randomBackColor: {
       type: Boolean,
       default: true
-    }
+    },
+    randomFontCase: {
+      type: Boolean,
+      default: true
+    },
   }
 }
 </script>

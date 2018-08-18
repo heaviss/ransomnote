@@ -9,12 +9,12 @@ function get_span_styles(wrapper, property) {
 describe('RansomNote', () => {
   const wrapper = mount(RansomNote, {
     propsData: {
-      text: 'hi!'
+      text: 'hi !'
     }
   })
 
   it('renders the correct markup', () => {
-    expect(wrapper.html()).toContain('<span>h</span><span>i</span><span>!</span>')
+    expect(wrapper.html()).toContain('<span>h</span><span>i</span> <span>!</span>')
   })
 
   it('randomizes font color', () => {
@@ -29,6 +29,12 @@ describe('RansomNote', () => {
     expect(new Set(styles).size).toBeGreaterThan(1)
   })
 
+  it('randomizes font case', () => {
+    wrapper.setProps({ text: 'ooooooooooooooooooooooooooo' })
+    const styles = get_span_styles(wrapper, 'FontCase')
+    
+    expect(new Set(styles).size).toEqual(3)
+  })
 })
 
 describe('RansomNote with disabled options', () => {
@@ -53,6 +59,18 @@ describe('RansomNote with disabled options', () => {
       }
     })
     const styles = get_span_styles(wrapper, 'BackColor')
+    
+    expect(new Set(styles).size).toEqual(1)
+  })
+
+  it('disables text case randomizing', () => {
+    const wrapper = mount(RansomNote, {
+      propsData: {
+        text: 'ooooooooooooooooooooooooooo',
+        randomFontCase: false
+      }
+    })
+    const styles = get_span_styles(wrapper, 'FontCase')
     
     expect(new Set(styles).size).toEqual(1)
   })
