@@ -2,19 +2,22 @@ import { mount } from '@vue/test-utils'
 import RansomNote from '@/components/RansomNote.vue'
 
 function get_span_styles(wrapper, property) {
-  const s = wrapper.findAll('span').wrappers
+  const s = wrapper.findAll('span').wrappers.slice(1)
+
   return s.map(function(w) {return w.element.style[property]})
 }
 
 describe('RansomNote', () => {
   const wrapper = mount(RansomNote, {
     propsData: {
-      text: 'hi !'
+      text: 'ooooooooooooooooooooooooooo'
     }
   })
 
   it('renders the correct markup', () => {
+    wrapper.setProps({ text: 'hi !' })
     expect(wrapper.html()).toContain('<span>h</span><span>i</span> <span>!</span>')
+    wrapper.setProps({ text: 'ooooooooooooooooooooooooooo' })
   })
 
   it('randomizes font color', () => {
@@ -30,15 +33,13 @@ describe('RansomNote', () => {
   })
 
   it('randomizes font case', () => {
-    wrapper.setProps({ text: 'ooooooooooooooooooooooooooo' })
     const styles = get_span_styles(wrapper, 'FontCase')
-    
-    expect(new Set(styles).size).toEqual(3)
+
+    expect(new Set(styles).size).toEqual(2)
   })
 
   it('randomizes margins', () => {
     const styles = get_span_styles(wrapper, 'Margins')
-    
     expect(new Set(styles).size).toBeGreaterThan(1)
   })
 
@@ -50,40 +51,42 @@ describe('RansomNote', () => {
 })
 
 describe('RansomNote with disabled options', () => {
-
+  const wrapper = mount(RansomNote, {
+    propsData: {
+      text: 'hello',
+      randomFontColor: false,
+      randomBackColor: false,
+      randomFontCase: false,
+      randomMargins: false,
+      randomPaddings: false,
+    }
+  })
   it('disables font color randomizing', () => {
-    const wrapper = mount(RansomNote, {
-      propsData: {
-        text: 'hello',
-        randomFontColor: false
-      }
-    })
     const styles = get_span_styles(wrapper, 'FontColor')
     
     expect(new Set(styles).size).toEqual(1)
   })
 
   it('disables background color randomizing', () => {
-    const wrapper = mount(RansomNote, {
-      propsData: {
-        text: 'hello',
-        randomBackColor: false
-      }
-    })
     const styles = get_span_styles(wrapper, 'BackColor')
     
     expect(new Set(styles).size).toEqual(1)
   })
 
   it('disables text case randomizing', () => {
-    const wrapper = mount(RansomNote, {
-      propsData: {
-        text: 'ooooooooooooooooooooooooooo',
-        randomFontCase: false
-      }
-    })
     const styles = get_span_styles(wrapper, 'FontCase')
     
+    expect(new Set(styles).size).toEqual(1)
+  })
+
+  it('disables margin randomizing', () => {
+    const styles = get_span_styles(wrapper, 'Margins')
+
+    expect(new Set(styles).size).toEqual(1)
+  })
+  it('disables padding randomizing', () => {
+    const styles = get_span_styles(wrapper, 'Paddings')
+
     expect(new Set(styles).size).toEqual(1)
   })
 })

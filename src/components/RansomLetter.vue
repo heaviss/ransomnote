@@ -46,21 +46,27 @@ export default {
       const font_case = ['uppercase', 'lowercase'][this.rand(0, 2)]
       this.$el.style.setProperty('--font-case', font_case)
     },
-    randomizeMargins: function() {
-      const margin = Math.random() * (0.1984 - 0.05) + 0.05
-      this.$el.style.setProperty('--margins', `${margin}em`)
+    setMargins: function() {
+      if(this.randomMargins) {
+        const margin = Math.random() * (0.1984 - 0.05) + 0.05
+        this.$el.style.setProperty('--margins', `${margin}em`)
+      }
+      else { this.$el.style.setProperty('--margins', '0.1em') }
     },
-    randomizePaddings: function() {
-      const padd = Math.random() * (0.1984 - 0.05) + 0.05
-      this.$el.style.setProperty('--paddings', `${padd}em`)
+    setPaddings: function() {
+      if(this.randomMargins) {
+        const padd = Math.random() * (0.1984 - 0.05) + 0.05
+        this.$el.style.setProperty('--paddings', `${padd}em`)
+      }
+      else { this.$el.style.setProperty('--margins', '0.1em') }
     }
   },
   mounted: function() {
     if(this.randomFontColor) {this.randomizeFontColor()}
     if(this.randomBackColor) {this.randomizeBackgroundColor()}
     if(this.randomFontCase) {this.randomizeFontCase()}
-    if(this.randomMargins) {this.randomizeMargins()}
-    if(this.randomPaddings) {this.randomizePaddings()}
+    this.setMargins()
+    this.setPaddings()
   }
 }
 </script>
@@ -71,8 +77,6 @@ span {
   --font-color: hsl(0, 100%, 10%);
   --back-color: hsl(0, 100%, 90%);
   --font-case: none;
-  --margins: 0.1em;
-  --paddings: 0.1em;
 
   color: var(--font-color);
   background-color: var(--back-color);
