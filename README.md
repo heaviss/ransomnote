@@ -5,11 +5,11 @@ Makes letters look like they've been cut from newspaper.
 - random font color;
 - random background color;
 - uppercase/lowercase;
+- random margin;
+- random padding;
 
 ## ToDo
 - normal/bold/italic;
-- random margin;
-- random padding;
 - random rotation;
 - border: exists or not;
 - random font size;

@@ -35,6 +35,18 @@ describe('RansomNote', () => {
     
     expect(new Set(styles).size).toEqual(3)
   })
+
+  it('randomizes margins', () => {
+    const styles = get_span_styles(wrapper, 'Margins')
+    
+    expect(new Set(styles).size).toBeGreaterThan(1)
+  })
+
+  it('randomizes paddings', () => {
+    const styles = get_span_styles(wrapper, 'Paddings')
+    
+    expect(new Set(styles).size).toBeGreaterThan(1)
+  })
 })
 
 describe('RansomNote with disabled options', () => {

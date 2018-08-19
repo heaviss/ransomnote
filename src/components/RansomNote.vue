@@ -7,6 +7,8 @@
                     :randomFontColor="randomFontColor"
                     :randomBackColor="randomBackColor"
                     :randomFontCase="randomFontCase"
+                    :randomMargins="randomMargins"
+                    :randomPaddings="randomPaddings"
                     >
       </RansomLetter>
       <template v-else>{{letter}}</template>
@@ -33,6 +35,14 @@ export default {
       default: true
     },
     randomFontCase: {
+      type: Boolean,
+      default: true
+    },
+    randomMargins: {
+      type: Boolean,
+      default: true
+    },
+    randomPaddings: {
       type: Boolean,
       default: true
     },
