@@ -10,6 +10,7 @@ Reasonable defaults are chosen and hardcoded :)
 - random margin;
 - random padding;
 - random rotation;
+- random vertical align;
 
 
 ## ToDo
@@ -17,7 +18,6 @@ Reasonable defaults are chosen and hardcoded :)
 - border: exists or not;
 - random font size;
 - random line height;
-- random vertical align;
 - live: change random parameter of random letter once a second;
 - random font;
 - random background texture;

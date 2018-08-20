@@ -10,6 +10,7 @@
                     :randomMargins="randomMargins"
                     :randomPaddings="randomPaddings"
                     :randomRotation="randomRotation"
+                    :randomAlign="randomAlign"
                     >
       </RansomLetter>
       <template v-else>&#8194;</template>
@@ -51,6 +52,10 @@ export default {
       type: Boolean,
       default: true
     },
+    randomAlign: {
+      type: Boolean,
+      default: true
+    },
   }
 }
 </script>
@@ -58,5 +63,6 @@ export default {
 <style scoped>
 .ransomnote {
   display: flex;
+  align-items: baseline;
 }
 </style>

@@ -54,6 +54,12 @@ describe('RansomNote', () => {
     
     expect(new Set(styles).size).toBeGreaterThan(1)
   })
+
+  it('randomizes align', () => {
+    const styles = get_span_styles(wrapper, 'Align')
+    
+    expect(new Set(styles).size).toBeGreaterThan(1)
+  })
 })
 
 describe('RansomNote with disabled options', () => {
@@ -100,6 +106,11 @@ describe('RansomNote with disabled options', () => {
 
   it('disables padding randomizing', () => {
     const styles = get_span_styles(wrapper, 'Rotation')
+    
+    expect(new Set(styles).size).toEqual(1)
+  })
+  it('disables align randomizing', () => {
+    const styles = get_span_styles(wrapper, 'Align')
     
     expect(new Set(styles).size).toEqual(1)
   })
