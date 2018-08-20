@@ -1,10 +1,12 @@
 # ransomnote (WIP)
 Makes letters look like they've been cut from newspaper.
 
+
 ## Features
 - random font color;
 - random background color;
 - uppercase/lowercase;
+
 
 ## ToDo
 - normal/bold/italic;
@@ -20,6 +22,9 @@ Makes letters look like they've been cut from newspaper.
 - random background texture;
 - (maybe) convert to leetspeak;
 - live: one param of one random letter changes once a second;
+- don't change case if letter is already in uppercase;
+- webcomponent build (when Firefox and Edge support custom components);
+
 
 ## Usage
 ### Browser
@@ -70,6 +75,16 @@ yarn run lint
 ```
 yarn run test:unit
 ```
+
+
+## Credits
+Special thanks to:
+- [ransomizer.com](http://www.ransomizer.com/) for inspiration;
+- Divyam Rastogi for [publishing tutorial](https://medium.com/justfrontendthings/how-to-create-and-publish-your-own-vuejs-component-library-on-npm-using-vue-cli-28e60943eed3); 
+- Evan You for Vue.js;
+- Sir Arthur Conan Doyle for demo sentense;
+- My mom for everything. Look mom, I'm a developer!
+
 
 ## License
 MIT
