@@ -9,9 +9,10 @@
                     :randomFontCase="randomFontCase"
                     :randomMargins="randomMargins"
                     :randomPaddings="randomPaddings"
+                    :randomRotation="randomRotation"
                     >
       </RansomLetter>
-      <template v-else>{{letter}}</template>
+      <template v-else>&#8194;</template>
     </template>
   </span>
 </template>
@@ -46,9 +47,16 @@ export default {
       type: Boolean,
       default: true
     },
+    randomRotation: {
+      type: Boolean,
+      default: true
+    },
   }
 }
 </script>
 
 <style scoped>
+.ransomnote {
+  display: flex;
+}
 </style>

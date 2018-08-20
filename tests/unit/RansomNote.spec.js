@@ -16,7 +16,7 @@ describe('RansomNote', () => {
 
   it('renders the correct markup', () => {
     wrapper.setProps({ text: 'hi !' })
-    expect(wrapper.html()).toContain('<span>h</span><span>i</span> <span>!</span>')
+    expect(wrapper.html()).toContain('<span class="ransomnote"><span>h</span><span>i</span> <span>!</span></span>')
     wrapper.setProps({ text: 'ooooooooooooooooooooooooooo' })
   })
 
@@ -48,6 +48,12 @@ describe('RansomNote', () => {
     
     expect(new Set(styles).size).toBeGreaterThan(1)
   })
+
+  it('randomizes rotation', () => {
+    const styles = get_span_styles(wrapper, 'Rotation')
+    
+    expect(new Set(styles).size).toBeGreaterThan(1)
+  })
 })
 
 describe('RansomNote with disabled options', () => {
@@ -59,6 +65,7 @@ describe('RansomNote with disabled options', () => {
       randomFontCase: false,
       randomMargins: false,
       randomPaddings: false,
+      randomRotation: false,
     }
   })
   it('disables font color randomizing', () => {
@@ -84,9 +91,16 @@ describe('RansomNote with disabled options', () => {
 
     expect(new Set(styles).size).toEqual(1)
   })
+
   it('disables padding randomizing', () => {
     const styles = get_span_styles(wrapper, 'Paddings')
 
+    expect(new Set(styles).size).toEqual(1)
+  })
+
+  it('disables padding randomizing', () => {
+    const styles = get_span_styles(wrapper, 'Rotation')
+    
     expect(new Set(styles).size).toEqual(1)
   })
 })

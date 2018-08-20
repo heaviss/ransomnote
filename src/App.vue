@@ -2,9 +2,9 @@
   <div id="app" class="flex-container">
     <p class="flex-item"> ... </p>
     <p class="flex-item">Out of the envelope he took a half-sheet of foolscap paper folded into four. This he opened and spread flat upon the table. Across the middle of it a single sentence had been formed by the expedient of pasting printed words upon it. It ran:</p>
-    <p class="flex-item">
+    <p class="flex-item note">
       <RansomNote text="As you value your life or your reason keep away from the "/>
-      <span>moor.</span>
+      <em>moor.</em>
     </p>
     <p class="flex-item">The word “moor” only was printed in ink.</p>
     <p class="flex-item"> ... </p>
@@ -35,8 +35,12 @@ export default {
   align-items: center;
 }
 .flex-item {
-  width: 50%;
+  width: 60%;
   min-width: 500px;
   max-width: 1000px;
+}
+.note {
+  display: flex;
+  font-size: 14px;
 }
 </style>

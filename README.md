@@ -8,11 +8,11 @@ Makes letters look like they've been cut from newspaper.
 - uppercase/lowercase;
 - random margin;
 - random padding;
+- random rotation;
 
 
 ## ToDo
 - normal/bold/italic;
-- random rotation;
 - border: exists or not;
 - random font size;
 - random line height;

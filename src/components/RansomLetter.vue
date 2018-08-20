@@ -27,6 +27,10 @@ export default {
       type: Boolean,
       default: true
     },
+    randomRotation: {
+      type: Boolean,
+      default: true
+    },
   },
   methods: {
     rand: function(min, max){
@@ -58,8 +62,15 @@ export default {
         const padd = Math.random() * (0.1984 - 0.05) + 0.05
         this.$el.style.setProperty('--paddings', `${padd}em`)
       }
-      else { this.$el.style.setProperty('--margins', '0.1em') }
-    }
+      else { this.$el.style.setProperty('--paddings', '0.1em') }
+    },
+    setRotation: function() {
+      if(this.randomRotation) {
+        const rotation = this.rand(-20, 20)
+        this.$el.style.setProperty('--rotation', `rotate(${rotation}deg)`)
+      }
+      else { this.$el.style.setProperty('--rotation', 'none') }
+    },
   },
   mounted: function() {
     if(this.randomFontColor) {this.randomizeFontColor()}
@@ -67,6 +78,7 @@ export default {
     if(this.randomFontCase) {this.randomizeFontCase()}
     this.setMargins()
     this.setPaddings()
+    this.setRotation()
   }
 }
 </script>
@@ -83,6 +95,7 @@ span {
   text-transform: var(--font-case);
   margin: var(--margins);
   padding: var(--paddings);
+  transform: var(--rotation);
 
   vertical-align: baseline;
   border: 1px solid black;
