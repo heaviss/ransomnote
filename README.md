@@ -11,12 +11,12 @@ Reasonable defaults are chosen and hardcoded :)
 - random padding;
 - random rotation;
 - random vertical align;
+- random font size;
 
 
 ## ToDo
 - normal/bold/italic;
 - border: exists or not;
-- random font size;
 - random line height;
 - live: change random parameter of random letter once a second;
 - random font;

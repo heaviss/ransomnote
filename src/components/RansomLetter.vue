@@ -35,6 +35,10 @@ export default {
       type: Boolean,
       default: true
     },
+    randomFontSize: {
+      type: Boolean,
+      default: true
+    },
   },
   methods: {
     rand: function(min, max){
@@ -81,7 +85,13 @@ export default {
         this.$el.style.setProperty('--align', align)
       }
       else { this.$el.style.setProperty('--align', 'baseline') }
-      
+    },
+    setFontSize: function() {
+      if(this.randomFontSize) {
+        const size = Math.random() * (1.1 - 0.9) + 0.9
+        this.$el.style.setProperty('--font-size', `${size}em`)
+      }
+      else { this.$el.style.setProperty('--font-size', 'inherit') }
     },
   },
   mounted: function() {
@@ -92,6 +102,7 @@ export default {
     this.setPaddings()
     this.setRotation()
     this.setAlign()
+    this.setFontSize()
   }
 }
 </script>
@@ -110,6 +121,7 @@ span {
   padding: var(--paddings);
   transform: var(--rotation);
   align-self: var(--align);
+  font-size: var(--font-size);
 
   border: 1px solid black;
 }

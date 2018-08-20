@@ -11,6 +11,7 @@
                     :randomPaddings="randomPaddings"
                     :randomRotation="randomRotation"
                     :randomAlign="randomAlign"
+                    :randomFontSize="randomFontSize"
                     >
       </RansomLetter>
       <template v-else>&#8194;</template>
@@ -53,6 +54,10 @@ export default {
       default: true
     },
     randomAlign: {
+      type: Boolean,
+      default: true
+    },
+    randomFontSize: {
       type: Boolean,
       default: true
     },
