@@ -1,6 +1,7 @@
 # ransomnote (WIP)
 Makes letters look like they've been cut from newspaper.
 
+Reasonable defaults are chosen and hardcoded :)
 
 ## Features
 - random font color;
@@ -24,6 +25,7 @@ Makes letters look like they've been cut from newspaper.
 - live: one param of one random letter changes once a second;
 - don't change case if letter is already in uppercase;
 - webcomponent build (when Firefox and Edge support custom components);
+- word wrapping;
 
 
 ## Usage
