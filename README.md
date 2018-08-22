@@ -49,7 +49,20 @@ new Vue({
 
 ### Package
 ```
-#todo
+yarn add ransomnote
+```
+```
+<template>
+<RansomNote text='Hello!'/>
+</template>
+<script>
+import RansomNote from 'ransomnote';
+export default {
+  components: {
+    RansomNote
+  },
+}
+</script>
 ```
 
 
