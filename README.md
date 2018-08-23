@@ -16,16 +16,16 @@ Reasonable defaults are chosen and hardcoded :)
 
 ## ToDo
 - normal/bold/italic;
-- border: exists or not;
-- random line height;
-- live: change random parameter of random letter once a second;
-- random font;
-- random background texture;
-- (maybe) convert to leetspeak;
 - live: one param of one random letter changes once a second;
-- don't change case if letter is already in uppercase;
-- webcomponent build (when Firefox and Edge support custom components);
 - word wrapping;
+- don't change case if letter is already in uppercase;
+- border: exists or not;
+- random font;
+- random line height;
+- (when Firefox and Edge support custom components) webcomponent build;
+- (maybe) random background texture;
+- (maybe) convert to leetspeak;
+- (maybe 2.0.0) customizable options (user-defined ranges); 
 
 
 ## Usage
@@ -64,6 +64,32 @@ export default {
 }
 </script>
 ```
+
+### Parameters
+#### randomFontColor
+hsl(`0 - 359`, 100%, `0 - 25`), 
+default: true
+#### randomBackColor
+hsl(`0 - 359`, 100%, `88 - 100`), 
+default: true
+#### randomFontCase
+'uppercase' or 'lowercase', 
+default: true
+#### randomMargins
+from 0.05 to 0.1984, 
+default: true
+#### randomPaddings
+from 0.05 to 0.1984, 
+default: true
+#### randomRotation
+from -20 to 20 degrees, 
+default: true
+#### randomAlign
+'flex-start', 'flex-end' or 'center', 
+default: true
+#### randomFontSize
+from 0.9 to 1.1, 
+default: true
 
 
 ## Project setup
