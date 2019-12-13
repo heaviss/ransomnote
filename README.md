@@ -15,6 +15,7 @@ Reasonable defaults are chosen and hardcoded :)
 
 
 ## ToDo
+- refactor: move settings to object;
 - normal/bold/italic;
 - live: one param of one random letter changes once a second;
 - word wrapping;
@@ -120,7 +121,7 @@ yarn run test:unit
 
 ## Credits
 Special thanks to:
-- [ransomizer.com](http://www.ransomizer.com/) for inspiration;
+- [ransomizer.com](http://www.ransomizer.com/) & [zachleat](https://www.zachleat.com/web/randsom/) for inspiration;
 - Divyam Rastogi for [publishing tutorial](https://medium.com/justfrontendthings/how-to-create-and-publish-your-own-vuejs-component-library-on-npm-using-vue-cli-28e60943eed3); 
 - Evan You for Vue.js;
 - Sir Arthur Conan Doyle for demo sentense;
